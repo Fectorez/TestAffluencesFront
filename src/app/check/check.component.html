@@ -1,0 +1,18 @@
+<h1>Affluences</h1>
+
+<p>Please select a date and an hour to check if the resource is available.</p>
+
+<input [matDatepicker]="basicDatepicker" [(ngModel)]="selectedDate">
+<mat-datepicker-toggle [for]="basicDatepicker"></mat-datepicker-toggle>
+<mat-datepicker #basicDatepicker></mat-datepicker>
+
+<mat-form-field appearance="fill">
+  <mat-label>Time</mat-label>
+  <mat-select [(ngModel)]="selectedTime">
+    <mat-option *ngFor="let time of times" [value]="time.value">
+      {{time.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>

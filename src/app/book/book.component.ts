@@ -37,7 +37,8 @@ export class BookComponent implements OnInit {
 
   book(): void {
     this.dialog.open(DialogBookingOkComponent, {
-      width: '250px'
+      width: '250px',
+      disableClose: true
     });
     console.log('Booked');
     console.log('First name:', this.firstName);

@@ -49,4 +49,8 @@ export class CheckComponent implements OnInit {
       }        
     })
   }
+
+  get canSubmit() {
+    return this.selectedDate && this.selectedTime;
+  }
 }

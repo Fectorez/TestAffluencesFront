@@ -1,6 +1,8 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
+import { DialogBookingOkComponent } from '../dialog-booking-ok/dialog-booking-ok.component';
 
 @Component({
   selector: 'app-book',
@@ -10,10 +12,16 @@ import { ActivatedRoute } from '@angular/router';
 export class BookComponent implements OnInit {
   date = '';
   time = '';
+  conditionsAccepted = false;
+  firstName = '';
+  lastName = '';
+  email = '';
+  phoneNumber = '';
 
   constructor(
     private location: Location,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -28,6 +36,17 @@ export class BookComponent implements OnInit {
   }
 
   book(): void {
-    
+    this.dialog.open(DialogBookingOkComponent, {
+      width: '250px'
+    });
+    console.log('Booked');
+    console.log('First name:', this.firstName);
+    console.log('Last name:', this.lastName);
+    console.log('Email:', this.email);
+    console.log('Phone number:', this.phoneNumber);
+  }
+
+  get canBook() {
+    return this.firstName && this.lastName && this.email && this.conditionsAccepted;
   }
 }

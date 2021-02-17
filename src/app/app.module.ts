@@ -13,12 +13,18 @@ import { BookComponent } from './book/book.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogTimeSlotUnavailableComponent } from './dialog-time-slot-unavailable/dialog-time-slot-unavailable.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DialogBookingOkComponent } from './dialog-booking-ok/dialog-booking-ok.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CheckComponent,
-    BookComponent
+    BookComponent,
+    DialogTimeSlotUnavailableComponent,
+    DialogBookingOkComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +36,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     FormsModule,
     MatInputModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

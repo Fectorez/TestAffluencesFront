@@ -17,6 +17,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DialogTimeSlotUnavailableComponent } from './dialog-time-slot-unavailable/dialog-time-slot-unavailable.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DialogBookingOkComponent } from './dialog-booking-ok/dialog-booking-ok.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { DialogBookingOkComponent } from './dialog-booking-ok/dialog-booking-ok.
     MatButtonModule,
     MatCheckboxModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

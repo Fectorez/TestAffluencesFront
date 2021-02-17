@@ -30,8 +30,9 @@ export class CheckComponent implements OnInit {
 
   ngOnInit(): void {
     for ( let i = 0 ; i < 24 ; i++ ) {
-      this.times.push({value: i + ':00:00', viewValue: i + ':00'});
-      this.times.push({value: i + ':30:00', viewValue: i + ':30'});
+      const h = i < 10 ? '0' + i : i;
+      this.times.push({value: h + ':00:00', viewValue: h + ':00'});
+      this.times.push({value: h + ':30:00', viewValue: h + ':30'});
     }
   }
 

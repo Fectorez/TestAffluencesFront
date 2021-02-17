@@ -1,0 +1,27 @@
+h1 {
+  margin-top: 4%;
+  margin-bottom: 6%;
+  font-size: 24px;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 5%;
+}
+
+.form {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.form > * {
+  display: inline;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.button-container {
+  text-align: center;
+}

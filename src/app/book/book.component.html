@@ -39,7 +39,7 @@
     <mat-checkbox class="example-margin" color="primary" [(ngModel)]="conditionsAccepted">I accept terms and conditions</mat-checkbox>
   </div>
   <div>
-    <mat-checkbox class="example-margin" color="primary">Save my account</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="saveData">Save my account</mat-checkbox>
   </div>
   <div>
     <button mat-raised-button color="primary" (click)="book()" [disabled]="!canBook">Book</button>

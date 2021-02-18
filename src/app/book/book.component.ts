@@ -12,6 +12,7 @@ import { DialogBookingOkComponent } from '../dialog-booking-ok/dialog-booking-ok
 export class BookComponent implements OnInit {
   date = '';
   time = '';
+  saveData = false;
   conditionsAccepted = false;
   firstName = '';
   lastName = '';
@@ -29,6 +30,12 @@ export class BookComponent implements OnInit {
       this.date = params['date'];
       this.time = params['time'];
     });
+    if ( localStorage.getItem('firstName') ) {
+      this.firstName = localStorage.getItem('firstName')!;
+      this.lastName = localStorage.getItem('lastName')!;
+      this.email = localStorage.getItem('email')!;
+      this.phoneNumber = localStorage.getItem('phoneNumber')!;
+    }
   }
 
   back(): void {
@@ -40,6 +47,15 @@ export class BookComponent implements OnInit {
       width: '250px',
       disableClose: true
     });
+    if ( this.saveData ) {
+      localStorage.setItem('firstName', this.firstName);
+      localStorage.setItem('lastName', this.lastName);
+      localStorage.setItem('email', this.email);
+      localStorage.setItem('phoneNumber', this.phoneNumber);
+    }
+    else {
+      localStorage.clear();
+    }
     console.log('Booked');
     console.log('First name:', this.firstName);
     console.log('Last name:', this.lastName);

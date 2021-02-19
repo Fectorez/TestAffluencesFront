@@ -63,7 +63,7 @@ export class BookComponent implements OnInit {
     console.log('Phone number:', this.phoneNumber);
   }
 
-  get canBook() {
-    return this.firstName && this.lastName && this.email && this.conditionsAccepted;
+  get canBook(): boolean {
+    return (this.firstName && this.lastName && this.email && this.conditionsAccepted) as boolean;
   }
 }
